@@ -20,25 +20,25 @@ currentIndex : 현재 확인중인 요소
 ```java
 class Solution {
     public boolean validMountainArray(int[] arr) {
-        int i = 0;
+        int currentIndex = 0;
         
         if(arr.length < 3) {
             return false;
         }
         
-        while(i < arr.length - 1 && arr[i] < arr[i + 1]) {
-            i++;
+        while(currentIndex < arr.length - 1 && arr[currentIndex] < arr[currentIndex + 1]) {
+            currentIndex++;
         }
         
-        while(i == 0 || i == arr.length - 1) {
+        while(currentIndex == 0 || i == arr.length - 1) {
             return false;
         }
         
-        while(i < arr.length - 1 && arr[i] > arr[i + 1]) {
+        while(currentIndex < arr.length - 1 && arr[currentIndex] > arr[currentIndex + 1]) {
             i++;
         }
         
-        return i == arr.length - 1;
+        return currentIndex == arr.length - 1;
     }
 }
 ```
